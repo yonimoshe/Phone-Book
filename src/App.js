@@ -1,23 +1,21 @@
-import logo from './logo.svg';
+import AddPersonForm from './components/AddPersonForm';
 import './App.css';
+import { useEffect } from 'react/cjs/react.development';
+import React from 'react';
 
 function App() {
+
+  useEffect(()=>{
+    if (localStorage.getItem("persons_list") === null) {
+      localStorage.setItem('persons_list', JSON.stringify([]));
+    }
+  },[])
+
+  console.log('<App /> component rendered');
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+       <h1>Phone Book App</h1>
+       <AddPersonForm />
     </div>
   );
 }

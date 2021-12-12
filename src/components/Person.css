@@ -1,0 +1,23 @@
+.person-li {
+    width: 100%;
+    background: #0e101c;
+    margin-top: 1rem;
+}
+
+.card {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    height: 10vh;
+}
+
+.card > div {
+    padding-left: 1rem;
+}
+
+.card > div > h3 {
+    margin: 0;
+    width: 20vw; 
+    overflow: hidden;
+    text-overflow: ellipsis; 
+}
