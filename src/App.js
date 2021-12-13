@@ -6,7 +6,7 @@ import './App.css';
 
 function App() {
   const [showForm, setShowForm] = useState(false);
-  const [newContactAdded, setNewContactAdded] = useState(false);
+  const [newContactAddedToggle, setNewContactAddedToggle] = useState(false);
 
   useEffect(()=>{
     if (localStorage.getItem("persons_list") === null) {
@@ -22,7 +22,7 @@ function App() {
   return (
     <div className="App">
        { headerBtn }
-       { showForm && <AddPersonForm setNewContactAdded={setNewContactAdded} /> }
+       { showForm && <AddPersonForm setNewContactAddedToggle={setNewContactAddedToggle} newContactAddedToggle={newContactAddedToggle}  /> }
        <PersonsList />
     </div>
   );

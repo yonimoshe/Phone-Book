@@ -1,19 +1,35 @@
-import React from 'react'; 
+import React, { useRef, useEffect } from 'react'; 
 import { useForm } from 'react-hook-form';
 import "./AddPersonForm.css";
 
 
 function AddPersonForm(props) {
     const { register, handleSubmit, setFocus, reset, formState: { errors }} = useForm();
+    const currentImage = useRef(null)
+    useEffect(()=> {
+      currentImage.current = null;
+    })
 
-    console.log('<AddPersonForm /> component rendered');
+    const uploadImageHandler = (e) => {
+      const reader = new FileReader();
+      reader.onload = () => {
+        if (reader.readyState === 2) {
+          currentImage.current = reader.result;
+        }
+        if (reader.readyState === 1) {
+          return;
+        }
+      }
+      reader.readAsDataURL(e.target.files[0]);
+    }
+
     return (
      <React.Fragment>
       <div className="form-container">
           <form
             onSubmit={handleSubmit((new_person) => {   
               new_person["id"] = Math.random(); // gan new id
-              new_person["image"] = "https://image.shutterstock.com/image-vector/people-person-icon-modern-flat-260nw-1691909635.jpg" // gan photo placeholder
+              new_person["image"] = currentImage.current ? currentImage.current : "https://image.shutterstock.com/image-vector/people-person-icon-modern-flat-260nw-1691909635.jpg"
               let listArray = JSON.parse(localStorage.getItem('persons_list'));          
               const found = listArray.some(el => el.phone === new_person.phone); // check by phone if person alrady exsist in array      
               if (!found) {
@@ -22,7 +38,7 @@ function AddPersonForm(props) {
                 alert(`${new_person.firstName} ${new_person.lastName} Added`);
                 reset();
                 setFocus("firstName");
-                props.setNewContactAdded(true);
+                props.setNewContactAddedToggle(!props.newContactAddedToggle);
               }
               if (found) {
                 alert(`Ooops.. ${new_person.firstName} ${new_person.lastName} is already exist`);
@@ -56,6 +72,13 @@ function AddPersonForm(props) {
             id="phone"
           />
           {errors.phone && <p>{errors.phone.message}</p>}
+          <label htmlFor="image">Upload image:</label>
+          <input 
+           {...register('image')}
+           id="image" 
+           name="image" 
+           type="file"
+           onChange={uploadImageHandler} />
           <input type="submit" value="Add Person" />
         </form>
       </div> 

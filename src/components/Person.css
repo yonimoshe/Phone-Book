@@ -17,7 +17,12 @@
 
 .card > div > h3 {
     margin: 0;
-    width: 20vw; 
+    width: 145px; 
     overflow: hidden;
-    text-overflow: ellipsis; 
+}
+
+.card > div > a {
+    text-decoration: none;
+    color: rgb(223, 223, 223);
+    font-size: 1.2rem;
 }
