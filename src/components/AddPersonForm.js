@@ -1,6 +1,5 @@
 import React from 'react'; 
 import { useForm } from 'react-hook-form';
-import PersonsList from './PersonsList';
 import "./AddPersonForm.css";
 
 
@@ -21,8 +20,9 @@ function AddPersonForm(props) {
                 listArray.push(new_person);
                 localStorage.setItem('persons_list', JSON.stringify(listArray));
                 alert(`${new_person.firstName} ${new_person.lastName} Added`);
-                reset()
+                reset();
                 setFocus("firstName");
+                props.setNewContactAdded(true);
               }
               if (found) {
                 alert(`Ooops.. ${new_person.firstName} ${new_person.lastName} is already exist`);
@@ -59,7 +59,6 @@ function AddPersonForm(props) {
           <input type="submit" value="Add Person" />
         </form>
       </div> 
-      <PersonsList />
     </React.Fragment> 
     );
 }

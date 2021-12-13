@@ -1,9 +1,12 @@
+import React, { useEffect, useState } from 'react';
 import AddPersonForm from './components/AddPersonForm';
+import PersonsList from './components/PersonsList';
+
 import './App.css';
-import { useEffect } from 'react/cjs/react.development';
-import React from 'react';
 
 function App() {
+  const [showForm, setShowForm] = useState(false);
+  const [newContactAdded, setNewContactAdded] = useState(false);
 
   useEffect(()=>{
     if (localStorage.getItem("persons_list") === null) {
@@ -11,11 +14,16 @@ function App() {
     }
   },[])
 
-  console.log('<App /> component rendered');
+  const toggleFormHandler = () => {
+    setShowForm(!showForm);
+  }
+
+  const headerBtn = !showForm ? <h1 onClick={toggleFormHandler}>Add New Contact</h1> : <h1 onClick={toggleFormHandler}>Done thanks</h1>
   return (
     <div className="App">
-       <h1>Phone Book App</h1>
-       <AddPersonForm />
+       { headerBtn }
+       { showForm && <AddPersonForm setNewContactAdded={setNewContactAdded} /> }
+       <PersonsList />
     </div>
   );
 }

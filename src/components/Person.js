@@ -27,7 +27,6 @@ function Person(props) {
         marging: '0',
         width: '90vw',
         height:'50vh'
-        // background: 'rgb(255,255,255,0)'
       },
     };
 
@@ -74,7 +73,7 @@ function Person(props) {
               <h3>{props.firstName} {props.lastName}</h3>
             </div>  
             <div>
-              <p>{props.phone}</p>
+              <a href={`tel:${props.phone}`}>{props.phone}</a>
             </div>
           </div>
         </li>
