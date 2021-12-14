@@ -1,11 +1,16 @@
 .App {
   text-align: center;
+  position: relative;
 }
 
 .App > h1 {
-  height: 5vh;
+  height: 50px;
   color: aliceblue;
-  background-color: #0E101C;
+  background-color: #ec5990;
   margin: 0;
-  padding-bottom: 1rem;
+  font-weight: 200;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  z-index: 2;
 }

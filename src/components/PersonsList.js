@@ -3,7 +3,7 @@ import Person from './Person';
 import './PersonList.css';
 
 function PersonsList(props) {
-   let persons_list_element = <h2>No Contacts To Display</h2>
+   let persons_list_element = <h2 className='not-found-msg'>No Contacts To Display</h2>
    let listArray = localStorage.getItem("persons_list") ?  JSON.parse(localStorage.getItem("persons_list")) : [];
 
    if (listArray.length > 0) {

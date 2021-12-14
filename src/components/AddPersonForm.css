@@ -4,7 +4,9 @@
       "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
       sans-serif;
     color: white;
-    padding: 0 20px 100px;
+    padding: 65px 20px 20px;
+    position: sticky;
+    top: 50px;
   }
   
   .h1 {
@@ -68,11 +70,6 @@
   .buttonBlack {
     background: black;
     border: 1px solid white;
-  }
-  
-  .App {
-    max-width: 600px;
-    margin: 0 auto;
   }
   
   .container {
