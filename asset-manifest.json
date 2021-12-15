@@ -1,22 +1,25 @@
 {
   "files": {
-    "main.css": "/Phone-Book/static/css/main.864dc84a.chunk.css",
-    "main.js": "/Phone-Book/static/js/main.656b58bc.chunk.js",
-    "main.js.map": "/Phone-Book/static/js/main.656b58bc.chunk.js.map",
-    "runtime-main.js": "/Phone-Book/static/js/runtime-main.07e5521a.js",
-    "runtime-main.js.map": "/Phone-Book/static/js/runtime-main.07e5521a.js.map",
-    "static/js/2.5c7122af.chunk.js": "/Phone-Book/static/js/2.5c7122af.chunk.js",
-    "static/js/2.5c7122af.chunk.js.map": "/Phone-Book/static/js/2.5c7122af.chunk.js.map",
-    "static/js/3.c845286d.chunk.js": "/Phone-Book/static/js/3.c845286d.chunk.js",
-    "static/js/3.c845286d.chunk.js.map": "/Phone-Book/static/js/3.c845286d.chunk.js.map",
+    "main.css": "/Phone-Book/static/css/main.f7ba515a.chunk.css",
+    "main.js": "/Phone-Book/static/js/main.dbd3a930.chunk.js",
+    "main.js.map": "/Phone-Book/static/js/main.dbd3a930.chunk.js.map",
+    "runtime-main.js": "/Phone-Book/static/js/runtime-main.bfc7b684.js",
+    "runtime-main.js.map": "/Phone-Book/static/js/runtime-main.bfc7b684.js.map",
+    "static/css/2.f4c56af9.chunk.css": "/Phone-Book/static/css/2.f4c56af9.chunk.css",
+    "static/js/2.cc56f65f.chunk.js": "/Phone-Book/static/js/2.cc56f65f.chunk.js",
+    "static/js/2.cc56f65f.chunk.js.map": "/Phone-Book/static/js/2.cc56f65f.chunk.js.map",
+    "static/js/3.4c160d79.chunk.js": "/Phone-Book/static/js/3.4c160d79.chunk.js",
+    "static/js/3.4c160d79.chunk.js.map": "/Phone-Book/static/js/3.4c160d79.chunk.js.map",
     "index.html": "/Phone-Book/index.html",
-    "static/css/main.864dc84a.chunk.css.map": "/Phone-Book/static/css/main.864dc84a.chunk.css.map",
-    "static/js/2.5c7122af.chunk.js.LICENSE.txt": "/Phone-Book/static/js/2.5c7122af.chunk.js.LICENSE.txt"
+    "static/css/2.f4c56af9.chunk.css.map": "/Phone-Book/static/css/2.f4c56af9.chunk.css.map",
+    "static/css/main.f7ba515a.chunk.css.map": "/Phone-Book/static/css/main.f7ba515a.chunk.css.map",
+    "static/js/2.cc56f65f.chunk.js.LICENSE.txt": "/Phone-Book/static/js/2.cc56f65f.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
-    "static/js/runtime-main.07e5521a.js",
-    "static/js/2.5c7122af.chunk.js",
-    "static/css/main.864dc84a.chunk.css",
-    "static/js/main.656b58bc.chunk.js"
+    "static/js/runtime-main.bfc7b684.js",
+    "static/css/2.f4c56af9.chunk.css",
+    "static/js/2.cc56f65f.chunk.js",
+    "static/css/main.f7ba515a.chunk.css",
+    "static/js/main.dbd3a930.chunk.js"
   ]
 }
