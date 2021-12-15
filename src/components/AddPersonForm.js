@@ -1,5 +1,7 @@
 import React, { useRef, useEffect } from 'react'; 
 import { useForm } from 'react-hook-form';
+import { toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import "./AddPersonForm.css";
 
 
@@ -9,6 +11,20 @@ function AddPersonForm(props) {
     useEffect(()=> {
       currentImage.current = null;
     })
+
+    const notifyContactExist = (name,last="") => {
+      toast.error(`${name} ${last} is alredy exist`, {
+          position: toast.POSITION.TOP_CENTER,
+          autoClose: 2000
+      })
+    }
+
+    const notifyContactAdded = (name,last="") => {
+      toast.success(`${name} ${last} is addes successfuly!`, {
+          position: toast.POSITION.TOP_CENTER,
+          autoClose: 2000
+      })
+    }
 
     const uploadImageHandler = (e) => {
       const reader = new FileReader();
@@ -35,13 +51,14 @@ function AddPersonForm(props) {
               if (!found) {
                 listArray.push(new_person);
                 localStorage.setItem('persons_list', JSON.stringify(listArray));
-                alert(`${new_person.firstName} ${new_person.lastName} Added`);
+                notifyContactAdded(new_person.firstName,new_person.lastName);
                 reset();
                 setFocus("firstName");
                 props.setNewContactAddedToggle(!props.newContactAddedToggle);
+                props.setShowForm(false)
               }
               if (found) {
-                alert(`Ooops.. ${new_person.firstName} ${new_person.lastName} is already exist`);
+                notifyContactExist(new_person.firstName,new_person.lastName);
               }
            })}
           >

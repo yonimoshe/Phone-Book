@@ -1,8 +1,11 @@
 import React, { useEffect, useState } from 'react';
 import AddPersonForm from './components/AddPersonForm';
 import PersonsList from './components/PersonsList';
+import { toast } from 'react-toastify';
 
 import './App.css';
+
+toast.configure();
 
 function App() {
   const [showForm, setShowForm] = useState(false);
@@ -22,7 +25,10 @@ function App() {
   return (
     <div className="App">
        { headerBtn }
-       { showForm && <AddPersonForm setNewContactAddedToggle={setNewContactAddedToggle} newContactAddedToggle={newContactAddedToggle}  /> }
+       { showForm && <AddPersonForm 
+                        setNewContactAddedToggle={setNewContactAddedToggle} 
+                        newContactAddedToggle={newContactAddedToggle}
+                        setShowForm={setShowForm}  /> }
        <PersonsList />
     </div>
   );
